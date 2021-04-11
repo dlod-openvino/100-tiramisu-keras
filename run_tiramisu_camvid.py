@@ -7,6 +7,7 @@ import sys
 from camvid.mapping import decode
 from tiramisu.model import create_tiramisu
 
+import numpy as np 
 
 def parse_args(args):
     parser = argparse.ArgumentParser(description='Script for inference with models trained on CamVid data')

@@ -13,22 +13,23 @@ from keras.callbacks import TensorBoard, ModelCheckpoint, EarlyStopping
 from tiramisu.model import create_tiramisu
 from camvid.mapping import map_labels
 
+import numpy as np
 
 def parse_args(args):
     parser = argparse.ArgumentParser(description='Script for training The One Hundred Layers Tiramisu network.')
 
     parser.add_argument('--output_path',
                         help='Path for saving a training model as a *.h5 file. Default is models/new_tiramisu.h5',
-                        default='models/new_tiramisu.h5')
+                        default='models/new_model.h5')
     parser.add_argument('--path_to_raw',
-                        help='Path to raw images used for training. Default is camvid-master/701_StillsRaw_full/',
-                        default='camvid-master/701_StillsRaw_full/')
+                        help='Path to raw images used for training. Default is camvid-master/train/',
+                        default='camvid-master/train/')
     parser.add_argument('--image_size',
                         help='Size of the input image. Default is [360, 480]',
                         default=(360, 480))
     parser.add_argument('--path_to_labels',
-                        help='Path to labeled images used for training. Default is camvid-master/LabeledApproved_full/',
-                        default='camvid-master/LabeledApproved_full/')
+                        help='Path to labeled images used for training. Default is camvid-master/trainannot/',
+                        default='camvid-master/trainannot/')
     parser.add_argument('--path_to_labels_list',
                         help='Path to file defining classes used in camvid dataset. '
                              'Only used if convert_from_camvid = True. Default is camvid-master/label_colors.txt',
@@ -61,8 +62,8 @@ def parse_args(args):
                         default=50)
     parser.add_argument('--path_to_model_weights',
                         help='Path to saved model weights if training should be resumed. '
-                             'Default: models/new_tiramisu.h5',
-                        default='models/new_tiramisu.h5')
+                             'Default: models/new_model.h5',
+                        default='models/new_model.h5')
     parser.add_argument('--train_from_zero',
                         type=bool,
                         help='Boolean, defines if training from scratch or resuming from saved h5 file. '

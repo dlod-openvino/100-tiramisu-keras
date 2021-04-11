@@ -1,5 +1,6 @@
 from keras.layers import *
 from keras.regularizers import l2
+import keras
 
 
 def relu_bn(x): return Activation('relu')(BatchNormalization(axis=-1)(x))
@@ -44,7 +45,7 @@ def transition_up(added, wd=0):
     x = Concatenate(axis=-1)(added)
     _, r, c, ch = x.get_shape().as_list()
     return Conv2DTranspose(ch, (3, 3), strides=(2, 2), padding='same', kernel_initializer='he_uniform',
-                 kernel_regularizer = regularizers.l2(wd))(x)
+                 kernel_regularizer = keras.regularizers.l2(wd))(x)
 
 
 def up_path(added, skips, nb_layers, growth_rate, p, wd):
