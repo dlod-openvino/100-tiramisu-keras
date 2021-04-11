@@ -20,7 +20,7 @@ Keras implementation of 100 layer Tiramisu for semantic segmentaton. Model FC-De
 Tested with:
 Python 3.8.2  
 Tensorflow 2.2.0  
-Keras 2.3.1 
+Keras 2.4.3 
 
 ## Installation guide
 ### Step 1: Create a environment in Anaconda with python=3.8:
@@ -35,9 +35,9 @@ pip install --ignore-installed --upgrade tensorflow==2.2.0
 ~~~
 conda install cudatoolkit=10.1 cudnn=7.6.5
 ~~~
-### Step 4: Install Keras==2.4.1 pillow
+### Step 4: Install Keras==2.4.3 pillow
 ~~~
-pip install keras==2.3.1 pillow
+pip install keras==2.4.3 pillow
 ~~~
 
 
@@ -80,9 +80,10 @@ optional arguments:
 Run the following to train with default configuration (training on CamVid dataset) - Please download the dataset from Baidu-online-storage
 Link：https://pan.baidu.com/s/1Jy3NwJQOZN4C8TDh5739Mw 
 PWD：9xy0 
+
 Save the png files into 
-camvid-master\train - images
-camvid-master\trainannot - image annotations
+camvid-master\train  #This folder is for images
+camvid-master\trainannot   #This folder is for the image annotations
 ```
 python train.py
 ```
