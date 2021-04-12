@@ -186,5 +186,6 @@ python convert_to_onnx.py
 ~~~
  D:\100-tiramisu-keras>python ov_infer_demo.py -d CPU
 ~~~
+You will get the inference result.
 ## Notes
 CamVid dataset: http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/
