@@ -84,7 +84,6 @@ PWD：9xy0
 Save the png files into 
 camvid-master\train  #This folder is for images
 camvid-master\trainannot   #This folder is for the image annotations
-camvid-master\trainannot  #This folder is for image annotations
 ```
 python train.py
 ```
